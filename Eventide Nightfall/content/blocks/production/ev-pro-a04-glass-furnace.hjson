@@ -1,0 +1,109 @@
+type: HeatCrafter
+name: Glass Furnace
+description: Mixes sand and molten metals into an extremely durable glass.
+size: 3
+liquidCapacity: 20
+heatRequirement: 18
+craftTime: 180
+squareSprite: false
+consumes: {
+  items: [
+    ev-a03-dark-sand/10
+  ]
+  liquids: [
+  slag/0.1
+  ]
+}
+
+ignoreLiquidFullness: true
+
+ambientSound: loopMachineSpin
+ambientSoundVolume: 0.09
+
+craftEffect: {
+  type: ParticleEffect
+  particles: 12
+  colorFrom: fca67b
+  colorTo: c27954
+  sizeFrom: 0.95
+  sizeTo: 0.2
+  lifetime: 30
+  cone: 360
+  length: 6
+  baseLength: 8
+  interp: pow2Out
+  sizeInterp: pow2
+}
+
+drawer: {
+  type: DrawMulti
+  drawers: [
+    {
+      type: DrawRegion
+      suffix: -bottom
+    }
+    {
+  type: DrawLiquidTile
+  drawLiquid: slag
+  padLeft: 3
+  padTop: 3
+  padBottom: 3
+  padRight: 3
+}
+    {
+      type: DrawRegion
+      suffix: -spinner2
+      spinSprite: true
+      rotateSpeed: 3
+    }
+    {
+      type: DrawRegion
+      suffix: -spinner1
+      spinSprite: true
+      rotateSpeed: 6
+    }
+    {
+      type: DrawDefault
+    }
+    {
+      type: DrawHeatInput
+    }
+    {
+      type: DrawGlowRegion
+      suffix: -top
+      blending: additive
+      color: d76a6a80
+    }
+  ]
+}
+
+outputItems: [
+  ev-a11-dark-glass/10
+]
+
+category: crafting
+
+research: {
+  parent: ev-pro-a03-silicon-casting
+  objectives: [
+    {
+      type: OnSector
+      preset: 19s-04-incomplete
+    }
+  ]
+}
+
+requirements: [
+  ev-a04-iron/100
+  ev-a01-dark-rock/125
+  ev-a10-silicon/75
+]
+
+researchCost: [
+  ev-a04-iron/300
+  ev-a01-dark-rock/375
+  ev-a10-silicon/225
+]
+
+
+itemCapacity: 20

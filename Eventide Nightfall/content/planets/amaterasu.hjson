@@ -1,0 +1,28 @@
+name: Amaterasu
+radius: 7
+bloom: true
+accessible: false
+visible: true
+hasAtmosphere: false
+orbitSpacing: 6
+
+lightColor: F2FEFF
+
+mesh: {
+  type: SunMesh
+  divisions: 4
+  octaves: 5
+  persistence: 0.35
+  scl: 1.6
+  pow: 1.1
+  mag: 1.0
+  colorScale: 1.2
+  colors: [
+    ff1a00
+    ff3d00
+    ff5e00
+    ff7a1a
+    ff9a3d
+    ffc06a
+  ]
+}

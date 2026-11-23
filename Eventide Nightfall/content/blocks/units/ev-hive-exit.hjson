@@ -1,0 +1,11 @@
+type: UnitFactory
+name: ev-hive-exit
+
+size: 3
+health: 750
+squareSprite: false
+outlineRadius: 0
+requirements: [
+]
+
+category: units

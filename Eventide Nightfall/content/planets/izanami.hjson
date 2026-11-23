@@ -1,0 +1,253 @@
+name: Izanami
+alwaysUnlocked: true
+accessible: true
+visible: true
+
+parent: amaterasu
+solarSystem: amaterasu
+
+radius: 1
+orbitRadius: 75
+orbitSpacing: 1
+
+atmosphereRadIn: 0
+startSector: 160
+atmosphereRadOut: 0.3
+
+rules: {
+  fog: true
+  staticFog: true
+  coreDestroyClear: true
+  onlyDepositCore: true
+
+  lighting: true
+  ambientLight: 0c0c3294
+}
+
+campaignRuleDefaults: {
+  fog: true
+  hideSpawns: false
+  rtsAI: true
+}
+
+drawOrbit: true
+tidalLock: true
+sectorSize: 3
+
+orbitTime: 3000
+
+allowCampaignRules: true
+allowLaunchLoadout: false
+allowLaunchSchematics: false
+allowLaunchToNumbered: false
+allowLegacyLaunchPads: false
+allowSectorInvasion: false
+allowSelfSectorLaunch: false
+
+hasAtmosphere: true
+bloom: false
+
+showRtsAIRule: true
+prebuildBase: false
+clearSectorOnLose: true
+defaultCore: ev-stg-a01-core-dark
+enemyCoreSpawnReplace: false
+updateLighting: false
+
+launchCandidates: []
+itemWhitelist: [
+  "ev-a08-charcoal",
+  "ev-a11-dark-glass",
+  "ev-a01-dark-rock",
+  "ev-a03-dark-sand",
+  "ev-a02-dark-soil",
+  "ev-a06-gold",
+  "ev-a09-graphite",
+  "ev-a04-iron",
+  "ev-a05-lead",
+  "ev-a10-silicon",
+  "ev-a07-rybek-crystals",
+]
+liquidWhitelist: [
+  "ev-env-a10-contamined-water",
+  "slag"
+]
+
+mesh: [
+//Dark Rock
+  {
+    type: NoiseMesh
+    planet: izanami
+    divisions: 6
+    seed: 94
+    radius: 1.02
+
+    color1: 11132F
+    color2: 25245C
+
+    octaves: 3
+    persistence: 0.6
+    scale: 4
+    mag: 0.35
+  }
+//Rock
+  {
+    type: NoiseMesh
+    planet: izanami
+    divisions: 6
+    seed: 65
+    radius: 1.02
+
+    color1: 262626
+    color2: 26262600
+
+    octaves: 3
+    persistence: 0.6
+    scale: 5
+    mag: 0.35
+  }
+//Contamined Water
+  {
+    type: NoiseMesh
+    planet: izanami
+    divisions: 6
+    seed: 278
+    radius: 1.01
+
+    color1: 00FFBB
+    color2: 00FFBB00
+
+    octaves: 3
+    persistence: 0.6
+    scale: 6
+    mag: 0.35
+  }
+//Soil
+  {
+    type: NoiseMesh
+    planet: izanami
+    divisions: 4
+    seed: 129
+    radius: 1.01
+
+    color1: 2E5C6B
+    color2: 223D54
+
+    octaves: 3
+    persistence: 0.6
+    scale: 8
+    mag: 0.35
+  }
+//Hive
+  {
+    type: NoiseMesh
+    planet: izanami
+    divisions: 4
+    seed: 686
+    radius: 1.01
+
+    color1: 91866C
+    color2: 91866C
+
+    octaves: 3
+    persistence: 0.6
+    scale: 8
+    mag: 0.35
+  },
+//North Pole
+  {
+    type: MatMesh
+    mesh: {
+      type: NoiseMesh
+      seed: 84
+      divisions: 6
+      radius: 0.95
+      octaves: 3
+      persistence: 0.55
+      scale: 0.000003
+      mag: 0
+      color1: B1FFE8
+      color2: 28FFC5
+      colorOct: 3
+      colorPersistence: 0.55
+      colorScale: 0.60
+      colorThreshold: 0.54
+    }
+    mat: [0, 0.14, 0]
+  },
+//South Pole
+  {
+    type: MatMesh
+    mesh: {
+      type: NoiseMesh
+      seed: 94
+      divisions: 6
+      radius: 0.95
+      octaves: 3
+      persistence: 0.55
+      scale: 0.000003
+      mag: 0
+      color1: B1FFE8
+      color2: 28FFC5
+      colorOct: 3
+      colorPersistence: 0.55
+      colorScale: 0.60
+      colorThreshold: 0.54
+    }
+    mat: [0, -0.14, 0]
+  }
+]
+
+cloudMesh: [
+  {
+    type: HexSkyMesh
+    planet: izanami
+    speed: 1.21
+    radius: 0.10
+    divisions: 6
+    color: 8FB8D625
+    octaves: 3
+    persistence: 0.3
+    scl: 1
+    thresh: 0.6
+  }
+  {
+    type: HexSkyMesh
+    planet: izanami
+    speed: 1.01
+    radius: 0.11
+    divisions: 6
+    color: 8FB8D625
+    octaves: 3
+    persistence: 0.4
+    scl: 0.9
+    thresh: 0.6
+  }
+  {
+    type: HexSkyMesh
+    planet: izanami
+    speed: 0.891
+    radius: 0.091
+    divisions: 6
+    color: 8FB8D625
+    octaves: 3
+    persistence: 0.5
+    scl: 1.1
+    thresh: 0.6
+  }
+]
+atmosphereColor: 5E96C7
+landCloudColor: 8FB8D625
+iconColor: 424B99
+
+generator: {
+  octaves: 4
+  persistence: 0.52
+  scale: 12
+  mag: 1.5
+  thresh: 1.0
+  min: 220
+  max: 600
+  radMin: 220
+  radMax: 600
+}

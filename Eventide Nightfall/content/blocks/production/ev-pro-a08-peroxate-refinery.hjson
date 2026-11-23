@@ -1,0 +1,137 @@
+type: HeatCrafter
+name: Peroxate Refinery
+description: It electrifies and heats the mycelial exudate to extremely high temperatures in order to purify it, transforming it into peroxate, a substance so energetic that it corrodes most materials.
+size: 4
+heatRequirement: 35
+liquidCapacity: 30
+craftTime: 600
+squareSprite: false
+hasPower: true
+consumes: {
+  liquids: [
+  ev-liq-04-mycelial-exudate/0.1
+  ]
+  power: 13
+}
+
+ignoreLiquidFullness: true
+
+ambientSound: loopMachineSpin
+ambientSoundVolume: 0.09
+
+craftEffect: {
+type: ParticleEffect
+    particles: 6
+    colorFrom: E100E9
+    colorTo: FA00FF
+    sizeFrom: 0.50
+    sizeTo: 0.1
+    lifetime: 60
+    cone: 360
+    length: 3
+    baseLength: 4
+    interp: pow2Out
+    sizeInterp: pow2
+  }
+
+drawer: {
+  type: DrawMulti
+  drawers: [
+    {
+      type: DrawRegion
+      suffix: -bottom
+    }
+    {
+  type: DrawLiquidTile
+  drawLiquid: ev-liq-04-mycelial-exudate
+  padLeft: 3
+  padTop: 3
+  padBottom: 3
+  padRight: 15
+    }
+    {
+  type: DrawLiquidTile
+  drawLiquid: ev-liq-06-liquid-peroxate
+  padLeft: 15
+  padTop: 3
+  padBottom: 3
+  padRight: 3
+    }
+    {
+      type: DrawPistons
+      suffix: -piston1
+      sides: 1
+      angleOffset: 0
+      sinMag: 2
+      sinScl: 2
+    }
+    {
+      type: DrawPistons
+      suffix: -piston2
+      sides: 1
+      angleOffset: 180
+      sinMag: 2
+      sinScl: 2
+    }
+    {
+      type: DrawRegion
+      suffix: -spinner
+      spinSprite: true
+      rotateSpeed: 6
+      x: 0
+      y: 0
+    }
+    {
+      type: DrawDefault
+    }
+    {
+      type: DrawHeatInput
+    }
+    {
+      type: DrawGlowRegion
+      suffix: -top1
+      blending: additive
+      color: FF330080
+    }
+    {
+      type: DrawGlowRegion
+      suffix: -top2
+      blending: additive
+      color: 5500FF80
+    }
+    {
+      type: DrawGlowRegion
+      suffix: -top3
+      blending: additive
+      color: FA00FF80
+    }
+   ]
+  }
+outputLiquid: {
+  liquid: ev-liq-06-liquid-peroxate
+  amount: 0.1
+}
+liquidOutputDirections: [4]
+category: crafting
+
+research: {
+  parent: ev-pro-a07-radioactive-energizer
+  objectives: [
+    ev-pro-a07-radioactive-energizer
+    ev-liq-04-mycelial-exudate
+  ]
+}
+
+requirements: [
+  ev-a04-iron/400
+  ev-a01-dark-rock/250
+  ev-a06-gold/100
+  ev-a07-rybek-crystals/100
+]
+
+researchCost: [
+  ev-a04-iron/1200
+  ev-a01-dark-rock/750
+  ev-a06-gold/300
+  ev-a07-rybek-crystals/300
+]
